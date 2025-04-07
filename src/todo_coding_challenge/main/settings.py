@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "rest_framework",
     # Local
     "todo_coding_challenge.accounts",
+    "todo_coding_challenge.todos",
 ]
 
 MIDDLEWARE = [
