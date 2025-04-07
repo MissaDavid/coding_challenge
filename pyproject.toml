@@ -1,0 +1,63 @@
+[tool.poetry]
+authors = ["Melissa Tamplin <contact@meibee.dev>"]
+description = ""
+name = "todo_coding_challenge"
+packages = [{include = "todo_coding_challenge", from = "src"}]
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.scripts]
+manage = "todo_coding_challenge.manage:main"
+
+[tool.poetry.dependencies]
+django = "^5.1.8"
+django-environ = "^0.12.0"
+psycopg = {extras = ["binary", "pool"], version = "^3.2.0"}
+python = "^3.12"
+uvicorn = "^0.34.0"
+uvloop = { version = "^0.21.0", markers = "sys_platform != 'win32'" }
+httptools = "^0.6.4"
+djangorestframework = "^3.16.0"
+
+[tool.poetry.group.dev.dependencies]
+bandit = "^1.8.0"
+django-stubs = "^5.1.0"
+factory-boy = "^3.3.0"
+flake8 = "^7.1.0"
+flake8-bandit = "^4.1.1"
+flake8-bugbear = "^24.12.0"
+flake8-builtins = "^2.5.0"
+ipython = "^8.31.0"
+mypy = { extras = ["mypyc"], version = "^1.14.0" }
+poetry = "^1.8.0"
+pudb = "^2024.1.0"
+pytest = "^8.3.0"
+pytest-cov = "^6.0.0"
+pytest-django = "^4.9.0"
+pytest-playwright = "^0.6.0"
+pytest-spec = "^4.0.0"
+ruff = "^0.9.8"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.mypy]
+strict = true
+plugins = ["mypy_django_plugin.main"]
+
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = "environ"
+
+[tool.django-stubs]
+django_settings_module = "todo_coding_challenge.main.settings"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "todo_coding_challenge.main.settings"
+addopts = "--rootdir src --spec"
+norecursedirs = ".git .venv"
+spec_header_format = "{test_case} [{module_path}]:"
+
+[tool.coverage.run]
+omit = ["**/migrations/*"]
