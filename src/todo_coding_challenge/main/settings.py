@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import timedelta
 
 import environ
 
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Third Party
     "rest_framework",
+    "rest_framework_simplejwt",
     # Local
     "todo_coding_challenge.accounts",
     "todo_coding_challenge.todos",
@@ -46,6 +48,20 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "todo_coding_challenge.main.urls"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+# JWT settings
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+}
 
 TEMPLATES = [
     {
