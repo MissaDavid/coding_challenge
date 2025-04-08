@@ -2,13 +2,8 @@ import pytest
 from datetime import timedelta
 from django.urls import reverse
 from django.utils import timezone
-from rest_framework.test import APIClient
 from rest_framework import status
 
-
-@pytest.fixture
-def api_client():
-    return APIClient()
 
 @pytest.mark.django_db
 class TestTodoAPI:

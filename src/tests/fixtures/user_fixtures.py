@@ -20,3 +20,13 @@ def dana():
         email="dana@mythicquest.com",
         password="wildd"
     )
+
+@pytest.fixture
+def test_new_user():
+    User = get_user_model()
+    new_user = User.objects.create_user(
+        username='testuser',
+        email='test@example.com',
+        password='testpassword123'
+    )
+    return new_user
