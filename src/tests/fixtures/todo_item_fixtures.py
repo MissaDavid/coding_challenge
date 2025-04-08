@@ -1,10 +1,11 @@
 import pytest
-from datetime import datetime, timedelta
+from datetime import timedelta
+from django.utils import timezone
 
 
 @pytest.fixture
 def todo_items(poppy, dana):
-    tomorrow = datetime.today() + timedelta(days=1)
+    tomorrow = timezone.now() + timedelta(days=1)
 
     items = [
         {

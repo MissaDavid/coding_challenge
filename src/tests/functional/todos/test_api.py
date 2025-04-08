@@ -1,6 +1,7 @@
 import pytest
-from datetime import datetime, timedelta
+from datetime import timedelta
 from django.urls import reverse
+from django.utils import timezone
 from rest_framework.test import APIClient
 from rest_framework import status
 
@@ -15,7 +16,7 @@ class TestTodoAPI:
         """Test creating a new todo item"""
         api_client.force_authenticate(user=poppy)
 
-        tomorrow = datetime.today() + timedelta(days=1)
+        tomorrow = timezone.now() + timedelta(days=1)
 
         new_todo_data = {
             "title": "Finish DLC",
