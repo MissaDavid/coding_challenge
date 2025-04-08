@@ -4,7 +4,21 @@ services:
   db:
     image: postgres:16
     ports:
-      - 5432:5432
+      - "5432:5432"
     environment:
       - POSTGRES_USER=dev
       - POSTGRES_PASSWORD=dev_password
+  backend:
+    environment:
+      - DATABASE_URL=postgres://dev:dev_password@db:5432/dev
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=${DEBUG}
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
