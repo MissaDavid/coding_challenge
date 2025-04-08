@@ -34,7 +34,6 @@ pudb = "^2024.1.0"
 pytest = "^8.3.0"
 pytest-cov = "^6.0.0"
 pytest-django = "^4.9.0"
-pytest-playwright = "^0.6.0"
 pytest-spec = "^4.0.0"
 ruff = "^0.9.8"
 
