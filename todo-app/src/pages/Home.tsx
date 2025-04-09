@@ -24,27 +24,18 @@ const Home = () => {
       
       try {
         console.log("Loading user and todos...");
-        
-        // First, try to get the current user from memory
+
         let currentUser = getCurrentUser();
-        console.log("Current user from memory:", currentUser);
-        
-        // If not available, fetch it from the API
         if (!currentUser) {
-          console.log("Fetching user from API...");
           currentUser = await fetchCurrentUser();
-          console.log("User from API:", currentUser);
         }
         
         if (currentUser) {
           setUser(currentUser);
           
-          // Only fetch todos if we haven't already
           if (!todosLoaded) {
-            // Now fetch todos
             console.log("Fetching todos...");
             const fetchedTodos = await fetchAllTodos();
-            console.log("Fetched todos:", fetchedTodos);
             setTodos(fetchedTodos);
             setTodosLoaded(true);
           }
