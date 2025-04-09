@@ -50,6 +50,7 @@ Is it overkill for a coding challenge? Absolutely.
    ```
 
 3. The frontend application will be available at `http://localhost:5173`
+4. Login and Registration are available at `http://localhost:5173/signin`, and dashboard available at `http://localhost:5173/home`.
 
 
 
