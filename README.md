@@ -30,17 +30,12 @@ Is it overkill for a coding challenge? Absolutely.
 
 ### Backend (Docker)
 
-1. Navigate to the backend directory:
-   ```bash
-   cd src
-   ```
-
-2. Build and start the Docker containers:
+1. Build and start the Docker containers (backend + db):
    ```bash
    docker-compose up -d
    ```
 
-3. The backend API will be available at `http://localhost:8000`
+3. The backend API will be available at `http://localhost:8000/api`
 
 ### Frontend (npm)
 
