@@ -53,6 +53,6 @@ Is it overkill for a coding challenge? Absolutely.
 4. Login and Registration are available at `http://localhost:5173/signin`, and dashboard available at `http://localhost:5173/home`.
 
 
-
-
-
+![img.png](public/img.png)
+![img_1.png](public/img_1.png)
+![img_2.png](public/img_2.png)
