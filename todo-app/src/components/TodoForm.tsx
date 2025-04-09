@@ -90,14 +90,13 @@ export const TodoForm = ({ onAddTodo, editingTodo, onCancelEdit }: TodoFormProps
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="description">Description *</Label>
+                <Label htmlFor="description">Description (optional)</Label>
                 <Textarea
                   id="description"
                   placeholder="Add details..."
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   rows={3}
-                  required
                 />
               </div>
 
