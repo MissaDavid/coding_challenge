@@ -1,26 +1,8 @@
-export interface LoginCredentials {
-  username: string;
-  password: string;
-}
-
 export interface RegisterData {
   username: string;
   email: string;
   password: string;
   password2: string;
-}
-
-export interface TokenResponse {
-  access: string;
-  refresh: string;
-}
-
-export interface RefreshTokenRequest {
-  refresh: string;
-}
-
-export interface RefreshTokenResponse {
-  access: string;
 }
 
 export interface User {
